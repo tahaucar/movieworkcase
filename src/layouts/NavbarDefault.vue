@@ -16,9 +16,7 @@
             class="mr-sm-2"
             placeholder="Bul"
           ></b-form-input>
-          <b-button size="sm" class="my-2 my-sm-0" type="submit"
-            >Bul</b-button
-          >
+          <b-button size="sm" class="my-2 my-sm-0" type="submit">Bul </b-button>
         </b-nav-form>
       </b-navbar-nav>
     </b-collapse>
@@ -32,4 +30,3 @@ export default {
   },
 };
 </script>
-
