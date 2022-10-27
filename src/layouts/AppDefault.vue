@@ -1,14 +1,14 @@
 <template>
   <div class="d-flex flex-column">
-    <NavbarDefault />
+    <AppNavbar />
     <div>
       <slot />
     </div>
   </div>
 </template>
 <script>
-import NavbarDefault from "@/layouts/NavbarDefault";
+import AppNavbar from "@/layouts/AppNavbar";
 export default {
-  components: { NavbarDefault },
+  components: { AppNavbar },
 };
 </script>

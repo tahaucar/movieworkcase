@@ -2,28 +2,28 @@ import { createWebHistory, createRouter } from "vue-router";
 
 const routes = [
   {
-    name: "dashboard",
+    name: "AllMovies",
     path: "",
     meta: {
-      title: "DashboardMovie",
+      title: "AllMovies",
       layout: "empty-layout",
     },
-    component: () => import("../components/DashboardMovie"),
+    component: () => import("../components/AllMovies"),
   },
   {
-    name: "Favaorite Movies",
+    name: "FavoriteMovies",
     path: "/favorite",
     meta: {
-      title: "Favaorite Movies",
+      title: "FavoriteMovies",
       layout: "empty-layout",
     },
     component: () => import("../components/FavoriteMovies"),
   },
   {
-    name: "Movie Details",
-    path: "/detail",
+    name: "MovieDetail",
+    path: "/detail/:id",
     meta: {
-      title: "Movie Details",
+      title: "MovieDetail",
       layout: "empty-layout",
     },
     component: () => import("../components/MovieDetail"),

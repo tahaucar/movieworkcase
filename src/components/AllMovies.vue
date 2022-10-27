@@ -1,9 +1,9 @@
 <template>
-  <div id="dasboard" class="row">
+  <div id="all-movies" class="row">
     <div
       v-for="(item, index) in movieList.results"
       :key="index"
-      class="col-3 d-flex justify-content-center mt-4"
+      class="col-sm-3 d-flex justify-content-center mt-4"
     >
       <b-card
         :title="item.title"
@@ -12,22 +12,23 @@
         title-tag="h5"
         text-variant="secondary"
         img-alt="Image"
+        img-height="300"
         img-top
+        @click="movieDetail(item.id)"
         style="max-width: 18rem"
         class="mb-2"
       >
-        <b-card-text>
-          {{ item.vote_average }}
-        </b-card-text>
-        <!--        <template #footer>-->
-        <!--          <small class="text-secondary">{{ item.release_date }}</small>-->
-        <!--        </template>-->
-        <b-button href="#" variant="outline-secondary" class="mb-3"
+        <b-button
+          href="#"
+          variant="outline-secondary"
+          class="mb-3 mt-3"
+          @click="addMovieList(item.id)"
           >Favorilere Ekle
         </b-button>
         <b-card-text>
           {{ item.release_date }}
         </b-card-text>
+        <b-badge pill>{{ item.vote_average }} </b-badge>
       </b-card>
     </div>
     <div class="mt-3 d-flex justify-content-center">
@@ -42,7 +43,8 @@
   </div>
 </template>
 <script>
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapMutations, mapState } from "vuex";
+import router from "@/router";
 
 export default {
   data() {
@@ -51,25 +53,42 @@ export default {
     };
   },
   methods: {
-    ...mapActions("movie", ["getMovieList"]),
+    ...mapActions("movie", ["getMovieList", "addMovieToList"]),
     getMovie(id) {
       this.getMovieList(id);
     },
+    movieDetail(id) {
+      router.push(`/detail/${id}`);
+    },
+    addMovieList(id) {
+      this.addMovieToList(id).then(() => {
+        this.getMovieList(1);
+      });
+    },
   },
   computed: {
-    ...mapState("movie", ["movieList"]),
+    ...mapState("movie", ["movieList", "searchMovie"]),
+    ...mapMutations("movie", ["deneme"]),
     rows() {
-      return this.movieList.total_pages;
+      return 10000;
+      // return this.movieList.total_pages; Api tarafından page 500 den fazla gelmediği için page'i 500 le sınırlamak için 10000 yazıldı.
     },
   },
   created() {
     this.getMovieList(1);
   },
+  watch: {
+    searchMovie(nw) {
+      if (nw) {
+        this.deneme;
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
-#dasboard {
+#all-movies {
   background-color: black;
 }
 .customPagination /deep/ > li > button {
