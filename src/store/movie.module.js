@@ -52,7 +52,7 @@ export const movie = {
     },
   },
   mutations: {
-    deneme(state) {
+    reloadMovieList(state) {
       state.movieList = Object.assign([], state.searchMovie);
     },
     setMovieList(state, payload) {

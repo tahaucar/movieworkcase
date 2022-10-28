@@ -1,6 +1,13 @@
 <template>
-  <b-navbar class="customNavbar" toggleable="lg" variant="dark" type="dark">
-    <b-navbar-brand href="/">NavBar</b-navbar-brand>
+  <b-navbar
+    class="customNavbar fixed-top"
+    toggleable="lg"
+    variant="dark"
+    type="dark"
+  >
+    <b-navbar-brand href="/">
+      <img src="@/assets/logo.png" alt="" style="width: 50px; height: 30px" />
+    </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -10,7 +17,7 @@
         <b-nav-item href="/favorite">Favoriler</b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ms-auto">
-        <b-nav-form>
+        <b-nav-form style="margin-right: 10px">
           <b-form-input
             size="sm"
             class="mr-sm-2"
@@ -18,9 +25,6 @@
             v-model="movie"
             max-lengt="50"
           ></b-form-input>
-          <b-button size="sm" class="my-2 my-sm-0" type="submit" @click="search"
-            >Bul
-          </b-button>
         </b-nav-form>
       </b-navbar-nav>
     </b-collapse>
@@ -37,9 +41,15 @@ export default {
     };
   },
   methods: {
-    ...mapActions("movie", ["searchMovie"]),
-    search() {
-      this.searchMovie(this.movie);
+    ...mapActions("movie", ["searchMovie", "getMovieList"]),
+  },
+  watch: {
+    movie(nw) {
+      if (nw !== "") {
+        this.searchMovie(nw);
+      } else {
+        this.getMovieList(1);
+      }
     },
   },
 };

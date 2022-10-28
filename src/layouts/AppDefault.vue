@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex flex-column">
     <AppNavbar />
-    <div>
+    <div style="margin-top: 50px">
       <slot />
     </div>
   </div>

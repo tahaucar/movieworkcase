@@ -1,5 +1,5 @@
 <template>
-  <div id="all-movies" class="row">
+  <div id="favorite-movies" class="row">
     <div
       v-for="(item, index) in favoriteList.items"
       :key="index"
@@ -14,7 +14,6 @@
         img-alt="Image"
         img-height="300"
         img-top
-        style="max-width: 18rem"
         class="mb-2"
         @click="movieDetail(item.id)"
       >
@@ -61,8 +60,9 @@ export default {
 </script>
 
 <style scoped>
-#all-movies {
+#favorite-movies {
   background-color: black;
+  padding: 20px;
 }
 .customPagination /deep/ > li > button {
   color: #6c757d;

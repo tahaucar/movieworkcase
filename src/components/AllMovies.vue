@@ -15,7 +15,6 @@
         img-height="300"
         img-top
         @click="movieDetail(item.id)"
-        style="max-width: 18rem"
         class="mb-2"
       >
         <b-button
@@ -28,7 +27,7 @@
         <b-card-text>
           {{ item.release_date }}
         </b-card-text>
-        <b-badge pill>{{ item.vote_average }} </b-badge>
+        <b-badge pill>{{ item.vote_average.toFixed(1) }} </b-badge>
       </b-card>
     </div>
     <div class="mt-3 d-flex justify-content-center">
@@ -68,7 +67,7 @@ export default {
   },
   computed: {
     ...mapState("movie", ["movieList", "searchMovie"]),
-    ...mapMutations("movie", ["deneme"]),
+    ...mapMutations("movie", ["reloadMovieList"]),
     rows() {
       return 10000;
       // return this.movieList.total_pages; Api tarafından page 500 den fazla gelmediği için page'i 500 le sınırlamak için 10000 yazıldı.
@@ -80,7 +79,7 @@ export default {
   watch: {
     searchMovie(nw) {
       if (nw) {
-        this.deneme;
+        this.reloadMovieList;
       }
     },
   },
@@ -90,6 +89,7 @@ export default {
 <style scoped>
 #all-movies {
   background-color: black;
+  padding: 20px;
 }
 .customPagination /deep/ > li > button {
   color: #6c757d;
