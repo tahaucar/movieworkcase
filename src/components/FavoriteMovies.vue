@@ -11,9 +11,7 @@
         bg-variant="dark"
         title-tag="h5"
         text-variant="secondary"
-        img-alt="Image"
         img-height="300"
-        img-top
         class="mb-2"
         @click="movieDetail(item.id)"
       >
