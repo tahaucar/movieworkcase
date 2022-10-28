@@ -61,30 +61,6 @@ export default {
 
 <style scoped>
 #favorite-movies {
-  background-color: black;
   padding: 20px;
-}
-.customPagination /deep/ > li > button {
-  color: #6c757d;
-  background-color: #212529 !important;
-  border-color: #212529;
-}
-.customPagination /deep/ > li > span {
-  color: #6c757d;
-  background-color: #212529 !important;
-  border-color: #212529;
-}
-
-.customPagination /deep/ > li.active > button,
-.customPagination /deep/ > li > button:hover {
-  color: #000000;
-  background-color: #6c757d !important;
-  border-color: #212529;
-}
-.customPagination /deep/ > li.active > span,
-.customPagination /deep/ > li > span:hover {
-  color: #6c757d;
-  background-color: #212529 !important;
-  border-color: #212529;
 }
 </style>

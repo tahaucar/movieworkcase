@@ -56,19 +56,5 @@ export default {
 </script>
 
 <style scoped>
-.customNavbar /deep/ > li > a {
-  color: #6c757d;
-}
-.customNavbar /deep/ > div > a {
-  color: #6c757d;
-}
 
-.customNavbar /deep/ > div.active > a,
-.customNavbar /deep/ > div > a:hover {
-  color: #000000;
-}
-.customNavbar /deep/ > li.active > a,
-.customNavbar /deep/ > li > a:hover {
-  color: #000000;
-}
 </style>

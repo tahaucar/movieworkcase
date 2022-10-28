@@ -1,0 +1,76 @@
+html,
+body {
+  display: flex;
+  min-height: 100%;
+  width: 100%;
+  background-color: black !important;
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+
+    .customPagination li button {
+      color: #6c757d;
+      background-color: #212529 !important;
+      border-color: #212529;
+    }
+    .customPagination li span {
+      color: #6c757d;
+      background-color: #212529 !important;
+      border-color: #212529;
+    }
+
+    .customPagination li.active button,
+    .customPagination li button:hover {
+      color: #000000;
+      background-color: #6c757d !important;
+      border-color: #212529;
+    }
+    .customPagination li.active span,
+    .customPagination li span:hover {
+      color: #6c757d;
+      background-color: #212529 !important;
+      border-color: #212529;
+    }
+
+    .customNavbar li a {
+      color: #6c757d;
+    }
+    .customNavbar div a {
+      color: #6c757d;
+    }
+
+    .customNavbar div.active a,
+    .customNavbar div a:hover {
+      color: #000000;
+    }
+    .customNavbar li.active a,
+    .customNavbar li a:hover {
+      color: #000000;
+    }
+
+    .card-header {
+      background-color: #212529;
+      color: #6c757d;
+      width: 40%;
+      border-radius: 10px 10px 0px 0px;
+      padding: 20px 20px 5px 20px !important;
+      text-align: center;
+    }
+    .card-body {
+      padding: 20px !important;
+      background-color: #212529;
+      height: 100%;
+    }
+    .badge {
+      display: initial;
+      font-size: 0.8rem !important;
+      white-space: normal;
+      margin-left: 5px;
+    }
+
+  }
+}

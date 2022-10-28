@@ -120,27 +120,6 @@ export default {
   }
 }
 #movie-detail {
-  background-color: black;
   padding: 40px 100px 20px 100px;
-  width: 100% !important;
-}
-.card-header {
-  background-color: #212529;
-  color: #6c757d;
-  width: 40%;
-  border-radius: 10px 10px 0px 0px;
-  padding: 20px 20px 5px 20px !important;
-  text-align: center;
-}
-.card-body {
-  padding: 20px !important;
-  background-color: #212529;
-  height: 100%;
-}
-.badge {
-  display: initial;
-  font-size: 0.8rem !important;
-  white-space: normal;
-  margin-left: 5px;
 }
 </style>

@@ -5,6 +5,8 @@ import axios from "axios";
 import VueAxios from "vue-axios";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue-3/dist/bootstrap-vue-3.css";
+import "./assets/scss/main.scss";
+
 import store from "./store";
 import router from "@/router";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -28,8 +30,6 @@ library.add(
   faGithub,
   faUserSecret
 );
-
-
 
 const app = createApp(App);
 app.config.productionTip = false;
